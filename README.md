@@ -1,5 +1,7 @@
-Hangman
-To run this game: C
+                                       Hangman
+
+
+To run this game:
 1) Clone this repository with git clone <link>
 2) Open in VS code - have the terminal open
 3) Make sure you have node installed with 'node -v'
