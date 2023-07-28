@@ -20,8 +20,23 @@ const userChoiceMenu = () => {
     return choice;
 }
 
+// let acceptedLetter = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h','i', 'j', 'k', 'l', 'm', 'n', 'o', 'p','q', 'r', 's', 't', 'u', 'v', 'w', 'x','y', 'z']
+
+
+const userChoiceLetter = () => {
+    let choice = prompt(`Please choose a letter: `);
+    choice = choice.toLowerCase();
+    while (!(choice.length === 1 && choice.match(/[a-z]/i))) {
+        console.log(typeof choice)
+        console.log(choice.length)
+        choice = prompt('Invalid choice, please choose one letter between A-Z: ')
+    }
+    return choice;     
+}
+
 module.exports = {
     userChoiceDifficulty,
     userChoiceMenu,
+    userChoiceLetter
 }
 
