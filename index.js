@@ -54,8 +54,10 @@ const menu = () => {
     console.log("thanks for playing"); 
 }
 
+
+
+
 function gameLoop() {
-    
     const userChoice = userChoiceDifficulty();
     //get lives depending on difficulty
     let lives = getUserLives(userChoice);
@@ -64,8 +66,10 @@ function gameLoop() {
     const randomWord = getBotChoice(userChoice);
     //generate underscores
     const underscoredWord = getUnderscores(randomWord);
+    
     //check letters with word
     const userLetter = userChoiceLetter();
+
     const matches = checkWord(userLetter, randomWord);
     if (matches == "hangman"){
         let playAgain = prompt(`Your score is <score>, do you want to play again, y/n: `) 
@@ -81,9 +85,13 @@ function gameLoop() {
         //replace underscores
         const index = randomWord.findIndex(userLetter);
         underscoredWord[index] = userLetter;
+        userChoiceLetter();
+        
     } else {
         //reduce lives
+        console.log("wrong letter")
         lives -= 1
+        userChoiceLetter();
     }
     
 }
@@ -109,8 +117,9 @@ const getUnderscores = (randomWord) => {
 
 menu();
 
-hangmanWord = "lego";
-userGuess = "h";
+function letterLoop() {
+    
+}
 
 
 /*
